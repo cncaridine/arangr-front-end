@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Form from './components/Form.js'
 import Header from './components/Header.js'
 
 class App extends Component {
@@ -45,7 +45,7 @@ class App extends Component {
     return (
       <div>
         <Header/>
-        
+        <Form/>
       </div>
     );
   }
