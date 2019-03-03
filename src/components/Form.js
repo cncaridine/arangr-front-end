@@ -37,11 +37,11 @@ class Form extends Component {
     return(
       <div className="form">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="title" value={this.state.title} onChange={this.handleChange}/>
-          <input type="text" placeholder="location" value={this.state.location} onChange={this.handleChange}/>
-          <input type="text" placeholder="date" value={this.state.date} onChange={this.handleChange}/>
-          <input type="text" placeholder="time" value={this.state.time} onChange={this.handleChange}/>
-          <input type="text" placeholder="image" value={this.state.image} onChange={this.handleChange}/>
+          <input type="text" placeholder="title" value={this.state.eventVar} onChange={this.handleChange}/>
+          <input type="text" placeholder="location" value={this.state.eventVar} onChange={this.handleChange}/>
+          <input type="text" placeholder="date" value={this.state.eventVar} onChange={this.handleChange}/>
+          <input type="text" placeholder="time" value={this.state.eventVar} onChange={this.handleChange}/>
+          <input type="text" placeholder="image" value={this.state.eventVar} onChange={this.handleChange}/>
           <button type="submit">Submit Event</button>
         </form>
       </div>
