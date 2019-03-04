@@ -4,7 +4,10 @@ class EventInfo extends Component {
 
   render(){
     return(
-      <h1>This is the event show page</h1>
+      <div>
+      <h1>Show page</h1>
+
+      </div>
     )
   }
 }

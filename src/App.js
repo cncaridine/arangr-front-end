@@ -10,17 +10,16 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentView: 'events',
-
+      events: [],
     }
   }
 
   fetchEvents = () => {
     fetch('http://localhost:3000/arangr')
     .then(data => data.json())
-    .then(jData => {
-      console.log(jData);
-    })
+    .then(jData => this.setState({
+      events: jData
+    }))
     .catch(err => console.log(err))
   }
 
@@ -39,20 +38,23 @@ class App extends Component {
     .catch(err =>console.log(err))
   }
 
-  changeView = () => {
-    this.setState({
-      currentView: 'event'
-    })
+  // handleDelete = (eventId) => {
+  //   fetch(`http://localhost3000/arangr/${event-id}`)
+  // }
+
+  componentDidMount(){
+    this.fetchEvents()
   }
+
 
   render() {
     return (
       <BrowserRouter>
         <div>
         <Route path='/' render={(props)=> <Header/>}/>
-        <Route path='/' render={(props)=> <Events/>} exact/>
+        <Route path='/' render={(props)=> <Events events={this.state.events}/>} exact/>
         <Route path='/submit' render={(props)=> <Form handleCreateEvent={this.handleCreateEvent}/>}/>
-        <Route path='/event-info' render={(props)=> <EventInfo/>}/>
+        <Route path='/event-info' render={(props)=> <EventInfo events={this.state.events}/>}/>
         </div>
       </BrowserRouter>
     );

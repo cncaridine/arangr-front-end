@@ -47,6 +47,9 @@ class Form extends Component {
           <input type="text" placeholder="date" value={this.state.date} name="date" onChange={this.handleChange}/>
           <input type="text" placeholder="time" value={this.state.time} name="time" onChange={this.handleChange}/>
           <input type="text" placeholder="image" value={this.state.image} name="image" onChange={this.handleChange}/>
+          <input type="textarea" placeholder="description" value={this.state.description} name="description" onChange={this.handleChange}/>
+          <label>RSVP</label>
+          <input type="checkbox" placeholder="rsvp" value={this.state.rsvp} name="rsvp" onChange={this.handleChange}/>
           <button type="submit">Submit Event</button>
         </form>
       </div>
