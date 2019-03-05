@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   fetchEvents = () => {
-    fetch('http://localhost:3000/arangr')
+    fetch('https://arangr-api.herokuapp.com/arangr')
     .then(data => data.json())
     .then(jData => this.setState({
       events: jData
@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   handleCreateEvent = (event) => {
-    fetch('http://localhost:3000/arangr', {
+    fetch('https://arangr-api.herokuapp.com/arangr', {
       body: JSON.stringify(event),
       method: 'POST',
       headers: {
@@ -48,7 +48,7 @@ class App extends Component {
   }
 
   handleDelete = (id, arrayIndex, array) => {
-    fetch(`http://localhost:3000/arangr/${id}`, {
+    fetch(`https://arangr-api.herokuapp.com/arangr/${id}`, {
       method: 'DELETE'
     })
     .then(data => {
