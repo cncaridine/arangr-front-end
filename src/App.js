@@ -57,7 +57,9 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
-  
+  updateEvent = (events) => {
+    this.setState()
+  }
 
   componentDidMount(){
     this.fetchEvents()
