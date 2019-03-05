@@ -3,10 +3,10 @@ import React, {Component} from 'react'
 class EventInfo extends Component {
 
   render(){
+    console.log(this.props);
     return(
       <div>
-      <h1>Show page</h1>
-
+        <h1>{this.props.events.title}</h1>
       </div>
     )
   }

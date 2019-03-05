@@ -6,7 +6,7 @@ class Events extends Component {
     return(
       <div>
       <h1> this is the main page</h1>
-      {this.props.events.map((index, events) => {
+      {this.props.events.map((events, index) => {
         return(
           <EventInfo
             key={index}
