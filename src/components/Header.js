@@ -5,6 +5,7 @@ class Header extends Component {
     return(
       <div className="header">
         <h1>Arang.r</h1>
+        <a href="/new">Create New Event</a>
       </div>
     )
   }

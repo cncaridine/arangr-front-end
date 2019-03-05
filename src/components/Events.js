@@ -1,10 +1,21 @@
 import React, {Component} from 'react'
-
+import EventInfo from './EventInfo.js'
 class Events extends Component {
 
   render(){
     return(
-      <h1> this is the main page</h1>
+      <div className="main-page">
+      {this.props.events.map((events, index) => {
+        return(
+          <EventInfo
+            key={index}
+            events={events}
+            arrayIndex={index}
+            handleDelete={this.props.handleDelete}
+          />
+        )
+      })}
+      </div>
     )
   }
 }
