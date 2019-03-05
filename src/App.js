@@ -4,6 +4,7 @@ import Form from './components/Form.js'
 import Header from './components/Header.js'
 import Events from './components/Events.js'
 import EventShow from './components/EventShow.js'
+import UpdateForm from './components/UpdateForm.js'
 
 
 class App extends Component {
@@ -74,6 +75,7 @@ class App extends Component {
           <Route path='/' render={(props)=> <Events events={this.state.events} handleDelete={this.handleDelete}/>} exact/>
           <Route path='/new' render={(props)=> <Form handleCreateEvent={this.handleCreateEvent}/>}/>
           <Route path='/:id' render={({match})=> <EventShow events={this.state.events[match.params.id]}/>}/>
+          <Route path='/update' render={(props)=> <UpdateForm events={this.state.events}/>}/>
         </div>
       </BrowserRouter>
     );
