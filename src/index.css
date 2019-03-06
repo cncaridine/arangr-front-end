@@ -87,6 +87,18 @@ h5 {
   color: white;
 }
 
-.header > h1 {
+.header > h1, h3 {
   color: white;
+}
+
+.update-form > h1, h4 {
+  color: white;
+}
+
+.update-form > form > h1, label {
+  color: white;
+}
+
+.update-form {
+  text-align: center;
 }

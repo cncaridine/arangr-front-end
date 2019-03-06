@@ -18,9 +18,11 @@ class App extends Component {
   fetchEvents = () => {
     fetch('https://arangr-api.herokuapp.com/arangr')
     .then(data => data.json())
-    .then(jData => this.setState({
+    .then(jData =>{ this.setState({
       events: jData
-    }))
+    })
+    console.log(jData);
+  })
     .catch(err => console.log(err))
   }
 
@@ -41,6 +43,9 @@ class App extends Component {
 
   removeFromArray = (array, arrayIndex) => {
     this.setState(prevState => {
+      console.log('==========');
+      console.log(prevState['events']);
+      console.log(array);
       prevState[array].splice(arrayIndex, 1)
       return {
         [array]: prevState[array]
@@ -53,13 +58,26 @@ class App extends Component {
       method: 'DELETE'
     })
     .then(data => {
-      this.removeFromArray(array, arrayIndex)
+      this.removeFromArray('events', arrayIndex)
     })
     .catch(err => console.log(err))
   }
 
-  updateEvent = (events) => {
-    this.setState()
+  handleEventUpdate = (events, arrayIndex, array) => {
+    fetch(`https://arangr-api.herokuapp.com/arangr/${events.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(events),
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((updatedEvent) => {
+      return updatedEvent.json()
+    })
+    .then((jData) => {
+      console.log(jData);
+    })
   }
 
   componentDidMount(){
@@ -74,8 +92,10 @@ class App extends Component {
           <Route path='/' render={(props)=> <Header/>}/>
           <Route path='/' render={(props)=> <Events events={this.state.events} handleDelete={this.handleDelete}/>} exact/>
           <Route path='/new' render={(props)=> <Form handleCreateEvent={this.handleCreateEvent}/>}/>
-          <Route path='/:id' render={({match})=> <EventShow events={this.state.events[match.params.id]}/>}/>
-          <Route path='/update' render={(props)=> <UpdateForm events={this.state.events}/>}/>
+          <Route path='/:id' render={({match})=> <EventShow fetchEvents={this.fetchEvents}
+          events={this.state.events[match.params.id]}/>}/>
+          <Route path='/update/:id' render={({match})=> <UpdateForm events={this.state.events[match.params.id]}
+          handleEventUpdate={this.handleEventUpdate}/>}/>
         </div>
       </BrowserRouter>
     );
