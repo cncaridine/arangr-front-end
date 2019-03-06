@@ -61,7 +61,9 @@ class UpdateForm extends Component {
     return(
       <div className="update-form">
       { this.props.events ?
-        <form onSubmit={()=>this.props.handleEventUpdate(this.props.events)}>
+        <form onSubmit={(event)=>{
+          event.preventDefault()
+          this.props.handleEventUpdate(this.state, this.props.events)}}>
         <h1>Update Form</h1>
         <label>Title</label><br/>
         <input

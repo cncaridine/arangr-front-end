@@ -63,8 +63,9 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
-  handleEventUpdate = (events, arrayIndex, array) => {
-    fetch(`https://arangr-api.herokuapp.com/arangr/${events.id}`, {
+  handleEventUpdate = (events, props, arrayIndex, array) => {
+
+    fetch(`https://arangr-api.herokuapp.com/arangr/${props.id}`, {
       method: 'PUT',
       body: JSON.stringify(events),
       headers: {
@@ -73,6 +74,7 @@ class App extends Component {
       }
     })
     .then((updatedEvent) => {
+      console.log(updatedEvent);
       return updatedEvent.json()
     })
     .then((jData) => {
@@ -92,7 +94,7 @@ class App extends Component {
           <Route path='/' render={(props)=> <Header/>}/>
           <Route path='/' render={(props)=> <Events events={this.state.events} handleDelete={this.handleDelete}/>} exact/>
           <Route path='/new' render={(props)=> <Form handleCreateEvent={this.handleCreateEvent}/>}/>
-          <Route path='/:id' render={({match})=> <EventShow fetchEvents={this.fetchEvents}
+          <Route exact path='/:id' render={({match})=> <EventShow fetchEvents={this.fetchEvents}
           events={this.state.events[match.params.id]}/>}/>
           <Route path='/update/:id' render={({match})=> <UpdateForm events={this.state.events[match.params.id]}
           handleEventUpdate={this.handleEventUpdate}/>}/>
