@@ -9,12 +9,14 @@ class EventInfo extends Component {
         <h1>Name: {this.props.events.title}</h1>
         <img src={this.props.events.image} alt='event'/>
         <h1>Date: {this.props.events.date}</h1>
-        <a href={this.props.events.id - 1 }>More Info</a>
+        <a href={this.props.arrayIndex}>More Info</a><br/>
+        <a href={'/update/' + this.props.arrayIndex}>Edit Event Details</a><br/>
         <button onClick={()=> {
           this.props.handleDelete(this.props.events.id,
           this.props.arrayIndex,
           this.props.events
         )}}>Delete Event</button>
+
       </div>
     )
   }

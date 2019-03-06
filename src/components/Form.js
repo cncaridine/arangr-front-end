@@ -42,14 +42,12 @@ class Form extends Component {
     return(
       <div className="form">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="title" value={this.state.title} name="title" onChange={this.handleChange}/>
-          <input type="text" placeholder="location" value={this.state.location} name="location" onChange={this.handleChange}/>
-          <input type="text" placeholder="date" value={this.state.date} name="date" onChange={this.handleChange}/>
-          <input type="text" placeholder="time" value={this.state.time} name="time" onChange={this.handleChange}/>
-          <input type="text" placeholder="image" value={this.state.image} name="image" onChange={this.handleChange}/>
-          <input type="textarea" placeholder="description" value={this.state.description} name="description" onChange={this.handleChange}/>
-          <label>RSVP</label>
-          <input type="checkbox" placeholder="rsvp" value={this.state.rsvp} name="rsvp" onChange={this.handleChange}/>
+          <input type="text" placeholder="title" value={this.state.title} name="title" onChange={this.handleChange}/> <br/>
+          <input type="text" placeholder="location" value={this.state.location} name="location" onChange={this.handleChange}/> <br/>
+          <input type="text" placeholder="date" value={this.state.date} name="date" onChange={this.handleChange}/><br/>
+          <input type="text" placeholder="time" value={this.state.time} name="time" onChange={this.handleChange}/><br/>
+          <input type="text" placeholder="image" value={this.state.image} name="image" onChange={this.handleChange}/><br/>
+          <input type="textarea" placeholder="description" value={this.state.description} name="description" onChange={this.handleChange}/><br/>
           <button type="submit">Submit Event</button>
         </form>
       </div>
