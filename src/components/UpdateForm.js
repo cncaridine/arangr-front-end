@@ -11,7 +11,7 @@ class UpdateForm extends Component {
       time: this.props.events ? this.props.events.time : '',
       location: this.props.events ? this.props.events.location : '',
       description: this.props.events ? this.props.events.description : '',
-      rsvp: this.props.events ? this.props.events.rsvp : ''
+      rsvp: false
     }
   }
 
@@ -106,13 +106,6 @@ class UpdateForm extends Component {
            placeholder={this.props.events.description}
            onChange={this.updateDescription}
            value={this.state.description}
-         /><br/>
-         <h4>RSVP</h4> <br/>
-         <input
-           type="checkbox"
-           placeholder={this.props.events.rsvp}
-           onChange={this.updateRsvp}
-           value={this.state.rsvp}
          /><br/>
          <button type="submit">Submit Event</button>
          </form>

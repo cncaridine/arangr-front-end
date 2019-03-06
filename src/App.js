@@ -64,7 +64,8 @@ class App extends Component {
   }
 
   handleEventUpdate = (events, props, arrayIndex, array) => {
-
+    console.log(props);
+    console.log(events);
     fetch(`https://arangr-api.herokuapp.com/arangr/${props.id}`, {
       method: 'PUT',
       body: JSON.stringify(events),
