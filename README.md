@@ -4,7 +4,7 @@
 * Brendan Quirk
 * Cori Caridine
 
-##Sites:
+## Sites:
 * [Arangr](https://arangr-api.herokuapp.com/)
 * [Arangr API GitHub](https://github.com/cncaridine/arangr-api/)
 
