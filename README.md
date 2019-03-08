@@ -5,7 +5,7 @@
 * Cori Caridine
 
 ## Sites:
-* [Arangr](https://arangr-api.herokuapp.com/)
+* [Arangr](https://arangr-front-end.herokuapp.com/)
 * [Arangr API GitHub](https://github.com/cncaridine/arangr-api/)
 
 ## Approach
