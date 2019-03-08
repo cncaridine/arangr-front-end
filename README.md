@@ -5,9 +5,8 @@
 * Cori Caridine
 
 ##Sites:
-* API: https://arangr-api.herokuapp.com/
-* Front-end: https://arangr-front-end.herokuapp.com/
-* Arangr API GitHub: https://github.com/cncaridine/arangr-api/
+* [Arangr] (https://arangr-api.herokuapp.com/)
+* Arangr API GitHub: (https://github.com/cncaridine/arangr-api/)
 
 ## Approach
 Arangr was designed with a Rails backend and React frontend. The backend serves a JSON API with RESTful design using the Model-View-Controller (MVC) pattern. The frontend consumes the Rails API. Both are deployed online via Heroku.
