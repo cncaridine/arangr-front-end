@@ -1,7 +1,11 @@
 import React, {Component} from 'react'
 
 class EventShow extends Component {
+  componentDidMount(){
+    this.props.fetchEvents()
+  }
   render(){
+    console.log(this.props);
     return(
       <div className="show-div">
         {this.props.events ? <h1>{this.props.events.title}</h1> : ''}

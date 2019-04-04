@@ -13,19 +13,34 @@ code {
     monospace;
 }
 
+body {
+  background-image: url('http://ourpolitics.net/wp-content/uploads/2017/12/events.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Suranna', serif;
+  font-size: 20px;
+}
+
 
 img{
   width: 200px;
 }
 
 .event-div {
-  padding: 50px;
+  padding: 20px;
   border: 1px solid black;
   text-align: center;
   width: 60%;
   margin: 0 auto;
   margin-bottom: 80px;
   margin-top: 120px;
+  border-radius: 25px;
+  background: white;
+  color: black;
+  opacity: .8;
+  box-shadow: 6px 6px 4px grey;
 }
 
 .show-div {
@@ -33,9 +48,57 @@ img{
   text-align: center;
   width: 60%;
   margin: 0 auto;
-  padding: 40px;
+  padding: 30px;
+  border-radius: 25px;
+  background: white;
+  color: black;
+  opacity: .8;
+  box-shadow: 6px 6px 4px black;
+  margin-top: 40px;
 }
 
 .header {
+  text-align: center;
+  border-bottom: 1px solid black;
+  background: #418bb5;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+h1 {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white
+}
+
+.event-div > a {
+  color: black;
+}
+
+.form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+h5 {
+  color: white;
+}
+
+.header > h1, h3 {
+  color: white;
+}
+
+.update-form > h1, h4 {
+  color: white;
+}
+
+.update-form > form > h1, label {
+  color: white;
+}
+
+.update-form {
   text-align: center;
 }
